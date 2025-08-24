@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+</head>
+<body>
+
+<h2>Login Form</h2>
+
+<form id="loginForm" onsubmit="return loginUser()">
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+  </div>
+  <button type="submit">Login</button>
+</form>
+
+<script>
+function loginUser() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  // Read CSV file
+  fetch('users.csv')
+    .then(response => response.text())
+    .then(data => {
+      var rows = data.split('\n');
+      var found = false;
+      for (var i = 0; i < rows.length; i++) {
+        var cols = rows[i].split(',');
+        if (cols[0] === username && cols[1] === password) {
+          found = true;
+          break;
+        }
+      }
+      if (found) {
+        alert("Login successful!");
+        // Redirect to another page or perform other actions
+      } else {
+        alert("Invalid username or password");
+      }
+    })
+    .catch(error => {
+      console.error('Error reading CSV file:', error);
+    });
+
+  return false; // Prevent form submission
+}
+</script>
+
+</body>
+</html>

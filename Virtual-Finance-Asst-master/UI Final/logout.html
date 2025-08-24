@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+</head>
+<body>
+  <h1>Welcome to the Dashboard!</h1>
+  <button id="logoutButton">Logout</button>
+
+  <script>
+    // Logout button click event listener
+    document.getElementById('logoutButton').addEventListener('click', function() {
+      // Clear user data from localStorage
+      localStorage.removeItem('loggedInUser');
+      // Redirect to login page
+      window.location.href = 'home_login.html';
+    });
+  </script>
+</body>
+</html>

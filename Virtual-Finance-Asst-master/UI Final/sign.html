@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <style>
+    /* CSS Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #ffffff 50%, #87ceeb 50%);
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      color: #3498db;
+    }
+
+    input[type="text"], input[type="password"], input[type="email"], input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #3498db;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #2980b9;
+    }
+
+    .login, .sign-up {
+      margin-top: 20px;
+    }
+
+    .login a, .sign-up a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    .login a:hover, .sign-up a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <input type="text" id="username" placeholder="Username" required><br>
+      <input type="password" id="password" placeholder="Password" required><br>
+      <input type="email" id="email" placeholder="Email (optional)"><br> <!-- Optional email field -->
+      <input type="submit" value="Sign Up">
+    </form>
+    <div class="login">
+      <span>Already have an account? </span><a href="login_signup.html">Login</a>
+    </div>
+  </div>
+
+  <script>
+    // Sign-up form submission
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+      
+      // Get input values
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var email = document.getElementById('email').value;
+
+      // Check if username already exists in localStorage
+      var users = JSON.parse(localStorage.getItem('users')) || [];
+      var existingUser = users.find(function(user) {
+        return user.username === username;
+      });
+
+      if (existingUser) {
+        alert('Username already exists. Please choose another one.');
+      } else {
+        // Create new user object
+        var newUser = {
+          username: username,
+          password: password,
+          email: email
+        };
+
+        // Add new user to users array
+        users.push(newUser);
+
+        // Update users data in localStorage
+        localStorage.setItem('users', JSON.stringify(users));
+
+        alert('Sign up successful! You can now login.');
+        // Redirect to login page
+        window.location.href = 'login_signup.html';
+      }
+    });
+  </script>
+</body>
+</html>

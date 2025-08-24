@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Advisor</title>
+    <style>
+        body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    input[type="number"],
+    input[type="text"],
+    select {
+        padding: 10px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+
+    button {
+        padding: 12px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    #response {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+    </style>
+</head>
+<body>
+    <h1>Investment Advisor</h1>
+    <form id="investmentForm" action="/chat" method="post">
+        <h2><a href="https://www.etmoney.com/learn/fixed-deposit/what-is-fixed-deposit/" style="color: rgb(255, 255, 255);" target="_blank">Fixed Deposit</a></h2>
+        <label for="principal_fd">Principal Amount (₹):</label>
+        <input type="number" id="principal_fd" name="principal_fd" required>
+        <label for="rate_fd">Annual Interest Rate (%):</label>
+        <input type="number" id="rate_fd" name="rate_fd" required>
+        <label for="duration_fd">Duration (in days, months, or years):</label>
+        <input type="text" id="duration_fd" name="duration_fd" required>
+        <label for="monthly_payout_fd">Monthly Interest Payout:</label>
+        <select id="monthly_payout_fd" name="monthly_payout_fd" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <h2>Gold Investment</h2>
+        <label for="amount_inr_gold">Investment Amount (INR):</label>
+        <input type="number" id="amount_inr_gold" name="amount_inr_gold" required>
+        <label for="duration_gold">Duration (in days, months, or years):</label>
+        <input type="text" id="duration_gold" name="duration_gold" required>
+
+        <h2><a href="https://www.indiapost.gov.in/Financial/pages/content/post-office-saving-schemes.aspx" style="color: rgb(255, 255, 255);" target="_blank">Time Deposit Account</a></h2>
+        <label for="investment_amount_td">Investment Amount:</label>
+        <input type="number" id="investment_amount_td" name="investment_amount_td" required>
+        <label for="duration_years_td">Investment Duration (in years 1-5):</label>
+        <input type="number" id="duration_years_td" name="duration_years_td" min="1" max="5" required>
+
+        <h2><a href="https://www.indiapost.gov.in/Financial/pages/content/post-office-saving-schemes.aspx" style="color: rgb(255, 255, 255);" target="_blank">Recurring Deposit Account</a></h2>
+        <label for="monthly_investment_rd">Monthly Investment Amount:</label>
+        <input type="number" id="monthly_investment_rd" name="monthly_investment_rd" required>
+        <label for="duration_rd">Investment Duration (in years 1-5):</label>
+        <input type="number" id="duration_rd" name="duration_rd" min="1" max="5" required>
+
+        <h2><a href="https://www.amfiindia.com/investor-corner/investor-center/systematic-investment-plan.html" style="color: rgb(255, 255, 255);" target="_blank">Systematic Investment Plan</a></h2>
+        <label for="sip_amount">Monthly SIP Amount:</label>
+        <input type="number" id="sip_amount" name="sip_amount" required>
+        <label for="sip_duration">Investment Duration (in years):</label>
+        <input type="number" id="sip_duration" name="sip_duration" required>
+        <label for="sip_rate">Expected Annual Rate of Return (%):</label>
+        <input type="number" id="sip_rate" name="sip_rate" required>
+
+        <h2>Stock Investment</h2>
+        <label for="initial_investment_stock">Initial Investment Amount (INR):</label>
+        <input type="number" id="initial_investment_stock" name="initial_investment_stock" required>
+        <label for="duration_stock">Investment Duration (e.g., 1 day, 3 months, 2 years):</label>
+        <input type="text" id="duration_stock" name="duration_stock" required>
+
+        <button type="submit">Calculate</button>
+    </form>
+    <div id="response"></div> <!-- This div will display the response from the server -->
+    
+    <script>
+        // Script to handle form submission and display response
+        document.getElementById('investmentForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Get form data
+            const formData = new FormData(this);
+            
+            // Send form data to server using fetch
+            fetch('/chat', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text()) // Get response as text
+            .then(result => {
+                // Display the response in the response div
+                document.getElementById('response').innerHTML = result;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
+

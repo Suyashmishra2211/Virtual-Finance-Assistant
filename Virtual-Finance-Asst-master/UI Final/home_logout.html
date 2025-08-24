@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Experience the future of banking with our AI Voice Banking Chatbot.">
+    <title>VIRTUAL FINANCIAL ASSISTANT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Banking Chatbot Logo">
+            </a>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+		    <li><a href="http://127.0.0.1:4040">Investor Advisor</a></li>
+                    <li><a href="http://127.0.0.1:5000">Budget Tracker</a></li>
+                    <li><a href="feature.html">Features</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="logoutButton">Logout</button>
+
+        </div>
+    </header>
+    <main>
+        <section class="hero" aria-label="Introduction">
+            <div class="hero-content">
+                <h1>Experience the  Banking AI Assistant </h1>
+                <p>Welcome to your personal Financial assistant - navigate your finances with our bot.</p>
+                <button onclick="togglePage()">Talk to Our Chatbot</button>
+<script>
+  let chatbotActive = false;
+
+  function togglePage() {
+    window.location.href = "http://127.0.0.1:7070";
+  }
+  // Logout button click event listener
+  document.getElementById('logoutButton').addEventListener('click', function() {
+      // Clear user data from localStorage
+      localStorage.removeItem('loggedInUser');
+      // Redirect to login page
+      window.location.href = 'home_login.html';
+    });
+</script>
+
+            </div>
+        </section>
+<section class="features">
+    <div class="container">
+        <h2 class="features-title">Key Features</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <img src="voice-icon.png" alt="Voice Commands">
+                <h3>Voice Commands</h3>
+                <p>Control your bank account with simple voice commands.</p>
+            </div>
+            <div class="feature-item">
+                <img src="security-icon.png" alt="Secure">
+                <h3>Secure</h3>
+                <p>All communications and transactions are fully encrypted.</p>
+            </div>
+            <div class="feature-item">
+                <img src="support-icon.png" alt="24/7 Support">
+                <h3>24/7 Support</h3>
+                <p>Round-the-clock support for all your banking needs.</p>
+            </div>
+            <div class="feature-item">
+                <img src="analytics-icon.png" alt="Analytics">
+                <h3>Analytics</h3>
+                <p>Gain insights into your spending habits with advanced analytics.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="security-features">
+    <div class="container">
+        <h2>Security at its Best</h2>
+        <div class="security-grid">
+            <div class="security-item">
+                <img src="encryption-icon.png" alt="Encryption">
+                <h3>End-to-End Encryption</h3>
+                <p>Every transaction is secured with end-to-end encryption to protect your data.</p>
+            </div>
+            <div class="security-item">
+                <img src="privacy-icon.png" alt="Privacy">
+                <h3>Privacy Protection</h3>
+                <p>Your personal information remains confidential and safe from unauthorized access.</p>
+            </div>
+            <div class="security-item">
+                <img src="compliance-icon.png" alt="Compliance">
+                <h3>Regulatory Compliance</h3>
+                <p>Our services adhere to global and regional financial regulations to ensure full compliance.</p>
+            </div>
+            <div class="security-item">
+                <img src="monitoring-icon.png" alt="Monitoring">
+                <h3>Constant Monitoring</h3>
+                <p>Continuous monitoring of system activity to prevent and respond to threats quickly.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-cols">
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="#">Help Center</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="facebook.com"><img src="facebook-icon.png" alt="Facebook"></a>
+                    <a href="twitter.com"><img src="twitter-icon.png" alt="Twitter"></a>
+                    <a href="instagram.com"><img src="instagram-icon.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2024 Virtual Financial Assistant. All rights reserved.</p>
+        </div>
+    </div>
+</footer>   
+
+</html>

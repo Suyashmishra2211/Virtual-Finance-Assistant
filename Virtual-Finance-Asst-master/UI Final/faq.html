@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000000; /* Sky blue */
+      color: #333; /* Dark text color */
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    header {
+      background-color: #192a56; /* Dark blue */
+      color: #fff; /* White text color */
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    .back-arrow {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #fff; /* White arrow color */
+      font-size: 24px;
+      text-decoration: none;
+    }
+    .back-arrow:hover {
+      color: #800000; /* Maroon arrow color on hover */
+    }
+    main {
+      padding-top: 80px; /* Adjust to accommodate the fixed header */
+    }
+    .faq-section {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .faq-item {
+      width: calc(33.33% - 40px);
+      margin: 20px;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #fff; /* White background */
+      transition: transform 0.3s ease-in-out;
+    }
+    .faq-item:hover {
+      transform: translateY(-5px);
+    }
+    .faq-heading {
+      color: #192a56; /* Dark blue heading color */
+    }
+    .faq-heading:hover {
+      color: #800000; /* Maroon heading color on hover */
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .answer {
+      display: none;
+      margin-top: 10px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Frequently Asked Questions</h1>
+  <a href="abc.html" class="back-arrow">&#8678;</a>
+</header>
+
+<main>
+  <section class="faq-section">
+    <div class="faq-item">
+      <h2 class="faq-heading">Budgeting and Financial Planning:</h2>
+      <ul>
+        <li onclick="toggleAnswer(this)">How can I create a budget using the VFA?
+          <div class="answer">You can create a budget using the VFA by accessing the budgeting tool, inputting your income and expenses, and setting financial goals.</div>
+        </li>
+        <li onclick="toggleAnswer(this)">Can the VFA help me track my expenses?
+          <div class="answer">Yes, the VFA can help you track your expenses and income with the help of budget.</div>
+        </li>
+        <li onclick="toggleAnswer(this)">What financial goals can I set with the VFA's budgeting feature?
+          <div class="answer">You can set various financial goals with the help of budget tracker helping in managing your money with VFA's budgeting feature.</div>
+        </li>
+        <li onclick="toggleAnswer(this)">Does the VFA provide recommendations for saving and investing based on my budget?
+          <div class="answer">No, the VFA does not provide personalized recommendations for saving and investing based on your budget and financial goals as of now but will soon do the same.</div>
+        </li>
+        <li onclick="toggleAnswer(this)">Can I customize my budgeting categories with the VFA?
+          <div class="answer">No,but the VFA allows you to categories your transaction as an income or expense for now.</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="faq-item">
+      <h2 class="faq-heading">Investment Advice:</h2>
+      <ul>
+        <li onclick="toggleAnswer(this)">What investment options does the VFA recommend?
+          <div class="answer">The VFA recommends a range of investment options including stocks, mutual funds, gold , FD etc based on your risk tolerance and financial goals.</div>
+        </li>
+        <li onclick="toggleAnswer(this)">How does the VFA analyze my risk tolerance before providing investment advice?
+          <div class="answer">The VFA analyzes your risk tolerance through a questionnaire that assesses your financial situation, and comfort level with risk.</div>
+        </li>
+        <li onclick="toggleAnswer(this)">Can the VFA help me diversify my investment portfolio?
+          <div class="answer">Yes, the VFA provides strategies and recommendations to help you diversify your investment portfolio across various asset classes and sectors.</div>
+        </li>
+        <li onclick="toggleAnswer(this)">Does the VFA offer insights into market trends and potential investment opportunities?
+          <div class="answer">The VFA offers regular insights into market trends and identifies potential investment opportunities based on real time market analysis.</div>
+        </li>
+        <li onclick="toggleAnswer(this)">What factors does the VFA consider when suggesting investment strategies?
+          <div class="answer">The VFA considers factors such as your financial goals, risk tolerance, and market conditions when suggesting investment strategies.</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="faq-item">
+      <h2 class="faq-heading">Market Insights:</h2>
+      <ul>
+        <li onclick="toggleAnswer(this)">How does the VFA keep me updated on market trends?
+          <div class="answer">The VFA keeps you updated on market trends through regular real-time data on significant market events.</div>
+        </li>
+        <li onclick="toggleAnswer(this)">Can I receive notifications about significant changes in the financial markets?
+          <div class="answer">No, you cannot opt-in to receive notifications about significant changes in the financial markets directly on your device for now.</div>
+        </li>
+        <li onclick="toggleAnswer(this)">Does the VFA provide analysis on specific industries or sectors?
+          <div class="answer">The VFA provides detailed analysis on market, helping you make informed investment decisions.</div>
+        </li>
+        <li onclick="toggleAnswer(this)">Can I access historical market data through the VFA?
+          <div class="answer">Yes, the VFA allows you to access historical market data to help you analyze past performance and trends.</div>
+        </li>
+        <li onclick="toggleAnswer(this)">How often does the VFA update its market insights?
+          <div class="answer">The VFA provide real time data and also updates its market insights regularly to ensure you have the most current and relevant information for your financial decisions.</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2024 Virtual Financial Assistant. All rights reserved.</p>
+</footer>
+
+<script>
+  function toggleAnswer(element) {
+    const answer = element.querySelector('.answer');
+    if (answer.style.display === 'block') {
+      answer.style.display = 'none';
+    } else {
+      answer.style.display = 'block';
+    }
+  }
+</script>
+
+</body>
+</html>

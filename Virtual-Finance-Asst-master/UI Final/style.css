@@ -1,0 +1,429 @@
+/* Reset some basic elements */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body and general styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Header styles */
+header {
+    background-color: #222;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 10px 20px; /* Adjust the padding as needed */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 70px;
+    border-radius: 50%; /* Adjust based on your logo's dimensions */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    padding: 0 50px; /* Spacing between nav items */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #1e90ff; /* Highlight color on hover */
+}
+
+.cta-button {
+    padding: 10px 20px;
+    background-color: #1e90ff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #4169e1; /* Darker blue on hover */
+}
+.hero {
+    background-color: #121212; /* Dark background for the hero section */
+    color: #ffffff;
+    padding: 50px 20px; /* Ample padding for visual space */
+    text-align: center; /* Centering the content */
+}
+
+.hero-content {
+    max-width: 900px; /* Maximum width of the content */
+    margin: 0 auto; /* Centering the content horizontally */
+    padding: 20px; /* Padding around the content for spacing */
+}
+
+.hero h1 {
+    margin-bottom: 20px; /* Space below the heading */
+    font-size: 2.5em; /* Larger font size for impact */
+}
+
+.hero p {
+    margin-bottom: 30px; /* Space below the paragraph */
+    color:white;
+    font-size: 1.2em; /* Slightly larger font size for readability */
+    opacity: 0.9; /* Slightly muted text color */
+}
+
+button {
+    padding: 15px 30px; /* Padding for the button */
+    font-size: 1em; /* Text size for the button */
+    color: #ffffff; /* Text color */
+    background-color: #000000; /* Button color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer; /* Cursor indicates clickable */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #4169e1;
+    color:#000000;
+    font-size:1.1em; /* Darker blue on hover */
+}
+.security-features {
+    background-color: #121212; /* Dark background for security section */
+    color: #ffffff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.security-features h2 {
+    margin-bottom: 30px; /* Space under the section heading */
+    font-size: 2.2em;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centering the content */
+    padding: 0 15px;
+}
+
+.security-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adaptive grid layout */
+    gap: 20px;
+}
+
+.security-item {
+    background: #1e1e1e; /* Slightly lighter background for items */
+    padding: 30px;
+    border-radius: 10px; /* Rounded corners */
+    transition: transform 0.3s ease-in-out; /* Smooth scale transition on hover */
+}
+
+.security-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.security-item img {
+    max-width: 100px; /* Consistent icon size */
+    margin-bottom: 20px;
+}
+
+.security-item h3 {
+    margin-bottom: 15px; /* Space under the title */
+    font-size: 1.6em;
+}
+
+.security-item p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: black; /* Slightly lighter text for readability */
+}
+.security-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: black; /* Set text color to black */
+}
+.security-item img[src="encryption-icon.png"] {
+    width: 100px;  /* Adjust width as needed */
+    height: 102px; /* Adjust height as needed */
+}
+.site-footer {
+    background-color: #121212;
+    color: #ffffff;
+    padding: 40px 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer-cols {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer-col h4 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: #5d5d5d;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #000000;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-links img {
+    width: 24px; /* Adjust based on your icon size preferences */
+    vertical-align: middle;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #333333;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    color: #bbbbbb;
+    margin: 0;
+}
+/* Styles for the accessibility link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    z-index: 100;
+  }
+  
+  .skip-link:focus {
+    top: 0;
+  }
+/* Styles for the speech button and logo */
+.speech-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .logo {
+    width: 50px; /* Adjust size as needed */
+  }
+  
+  .features-title {
+    text-align: center;
+    margin-top: 1em; /* Adds space above the heading */
+    margin-bottom: 1em; /* Adds space below the heading */
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Adjust gap size as needed */
+}
+
+.feature-item {
+    text-align: center; /* Centers the content within each feature item */
+}
+
+.feature-item img {
+    width: 200px;  /* Set the width as needed */
+    height: 200px; /* Set the height as needed */
+    object-fit: cover; /* Ensures the image covers the set dimensions without distortion */
+    display: block; /* Makes the image a block element to allow for centering */
+    margin: 0 auto; /* Centers the image horizontally within its container */
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.header-container, .footer, .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.cta-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+.hero {
+    background-color: #009BDF;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.feature-grid, .security-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.feature-item, .security-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .header-container, .footer, .container {
+        padding: 10px;
+    }
+}
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #87CEEB 50%, #FFFFFF 50%);
+    color: #333333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    width: 100%;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .container:hover {
+    transform: translateY(-5px);
+  }
+  
+  h1 {
+    color: #000000;
+  }
+  
+  .back-link {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: #333333;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .back-link:hover {
+    color: #8a2be2;
+  }
+  
+  .features-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  
+  .feature {
+    width: calc(33.33% - 40px);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  
+  .feature:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(to bottom right, #ffffff 50%, #87ceeb 50%);
+  }
+  
+  .feature h3, .feature p {
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .feature:hover h3, .feature:hover p {
+    color: #6c5ce7;
+  }
+  
+  

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login and Sign Up</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #ffffff 50%, #87ceeb 50%);
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      color: #3498db;
+    }
+
+    input[type="text"], input[type="password"], input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #3498db;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #2980b9;
+    }
+
+    .sign-up {
+      margin-top: 20px;
+    }
+
+    .sign-up a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    .sign-up a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required><br>
+      <input type="password" id="password" placeholder="Password" required><br>
+      <input type="submit" value="Login">
+    </form>
+    <div class="sign-up">
+      <span>Don't have an account? </span><a href="sign.html">Sign up</a>
+    </div>
+  </div>
+
+  <script>
+    // Check if user exists in localStorage and if so, redirect to dashboard
+    document.addEventListener('DOMContentLoaded', function() {
+      if (localStorage.getItem('loggedInUser')) {
+        window.location.href = 'home_logout.html'; // Redirect to dashboard
+      }
+    });
+
+    // Login form submission
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+      
+      // Get input values
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      // Check if user exists in localStorage
+      var users = JSON.parse(localStorage.getItem('users')) || [];
+      var foundUser = users.find(function(user) {
+        return user.username === username && user.password === password;
+      });
+
+      if (foundUser) {
+        // Store the logged-in user in localStorage
+        localStorage.setItem('loggedInUser', JSON.stringify(foundUser));
+        // Redirect to dashboard
+        window.location.href = '';
+      } else {
+        alert('Invalid username or password. Please try again.');
+      }
+    });
+  </script>
+</body>
+</html>
